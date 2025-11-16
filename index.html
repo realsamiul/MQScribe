@@ -143,7 +143,7 @@
       scrollbar-width: none;
       -ms-overflow-style: none;
     }
-    /* Services page specific styling (from services.html) */
+    /* Services page specific styling */
     @media screen and (min-width: 787px) {
       .service_cms-item:nth-child(even) {
         flex-direction: row-reverse;
@@ -157,7 +157,7 @@
         border-right-style: solid;
       }
     }
-    /* Navbar about page styling (from about.html) */
+    /* Navbar about page styling (must be removed or controlled by JS/scrolling logic when combined) */
     .navbar.is-about {
       border-bottom: 1px solid white;
       background: transparent;
@@ -184,31 +184,34 @@
 <body>
   <div class="main-wrapper">
     <div class="page-wrapper">
-      <section id="homepage" class="full-page-section">
-        <div data-animation="over-right" data-collapse="small" data-duration="500" data-easing="ease-in-out" data-easing2="ease-in-out" role="banner" class="navbar w-nav">
-          <div class="padding-global">
-            <div class="container-xlarge w-container">
-              <div class="navbar_inner">
-                <nav role="navigation" class="navmenu w-nav-menu">
-                  <a href="#projects" class="text-small-caps is-nav-link w-nav-link">PORTFOLIO</a>
-                  <a href="#services" class="text-small-caps is-nav-link w-nav-link">services</a>
-                  <a href="#about" class="text-small-caps is-nav-link w-nav-link">About</a>
-                  <a href="#ai-content" class="text-small-caps is-nav-link w-nav-link">AI Content</a>
-                </nav>
-                <div data-mobile-menu="open" class="menu_button-inner">
-                  <div class="menu_button-line"></div>
-                  <div class="menu_button-line"></div>
-                  <div class="menu_button-line"></div>
-                </div>
-                <a href="#homepage" aria-current="page" class="navbar_brand w-nav-brand w--current">
-                  <img src="671fa81d5f5f17c9b7f3adb8_logo-black.svg" loading="lazy" alt="" class="intro_logo"/>
-                </a>
-                <a href="#contact" class="text-small-caps is-nav-link is-nav-cta">Contact</a>
+      
+      <div data-animation="over-right" data-collapse="small" data-duration="500" data-easing="ease-in-out" data-easing2="ease-in-out" role="banner" class="navbar w-nav">
+        <div class="padding-global">
+          <div class="container-xlarge w-container">
+            <div class="navbar_inner">
+              <nav role="navigation" class="navmenu w-nav-menu">
+                <a href="#projects" class="text-small-caps is-nav-link w-nav-link">PORTFOLIO</a>
+                <a href="#services" class="text-small-caps is-nav-link w-nav-link">services</a>
+                <a href="#about" class="text-small-caps is-nav-link w-nav-link">About</a>
+                <a href="#ai-content" class="text-small-caps is-nav-link w-nav-link">AI Content</a>
+                <a href="#blog" class="text-small-caps is-nav-link w-nav-link">blog</a>
+                <a href="#faq" class="text-small-caps is-nav-link w-nav-link">FAQ</a>
+              </nav>
+              <div data-mobile-menu="open" class="menu_button-inner">
+                <div class="menu_button-line"></div>
+                <div class="menu_button-line"></div>
+                <div class="menu_button-line"></div>
               </div>
+              <a href="#homepage" aria-current="page" class="navbar_brand w-nav-brand w--current">
+                <img src="671fa81d5f5f17c9b7f3adb8_logo-black.svg" loading="lazy" alt="" class="intro_logo"/>
+              </a>
+              <a href="#contact" class="text-small-caps is-nav-link is-nav-cta">Contact</a>
             </div>
           </div>
         </div>
-        
+      </div>
+      
+      <section id="homepage">
         <section class="section_hero">
           <div class="hero_block-bg"></div>
           <div class="hero_block">
@@ -268,7 +271,7 @@
           </div>
         </section>
         
-        <section class="section_projects is-home">
+        <section id="projects" class="section_projects is-home">
           <div class="padding-global padding-section-medium">
             <div class="w-layout-blockcontainer container-medium w-container">
               <div class="projects_inner">
@@ -341,31 +344,7 @@
         </section>
       </section>
       
-      <section id="services" class="full-page-section">
-        <div data-animation="over-right" data-collapse="small" data-duration="500" data-easing="ease-in-out" data-easing2="ease-in-out" role="banner" class="navbar w-nav">
-          <div class="padding-global">
-            <div class="container-xlarge w-container">
-              <div class="navbar_inner">
-                <nav role="navigation" class="navmenu w-nav-menu">
-                  <a href="#projects" class="text-small-caps is-nav-link w-nav-link">PORTFOLIO</a>
-                  <a href="#services" aria-current="page" class="text-small-caps is-nav-link w-nav-link w--current">services</a>
-                  <a href="#about" class="text-small-caps is-nav-link w-nav-link">About</a>
-                  <a href="#ai-content" class="text-small-caps is-nav-link w-nav-link">AI Content</a>
-                </nav>
-                <div data-mobile-menu="open" class="menu_button-inner">
-                  <div class="menu_button-line"></div>
-                  <div class="menu_button-line"></div>
-                  <div class="menu_button-line"></div>
-                </div>
-                <a href="#homepage" class="navbar_brand w-nav-brand">
-                  <img src="671fa81d5f5f17c9b7f3adb8_logo-black.svg" loading="lazy" alt="" class="intro_logo"/>
-                </a>
-                <a href="#contact" class="text-small-caps is-nav-link is-nav-cta">Contact</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        
+      <section id="services">
         <section class="section_page-hero">
           <div class="padding-global padding-section-medium">
             <div class="w-layout-blockcontainer container-large w-container">
@@ -483,7 +462,7 @@
                   </div>
                 </div>
               </div>
-
+              
               <div role="listitem" class="service_cms-item w-dyn-item">
                 <div class="service_item-img_block">
                   <div class="service_item-img_wrap slide-up-1">
@@ -534,7 +513,7 @@
                   </div>
                 </div>
               </div>
-
+              
               <div role="listitem" class="service_cms-item w-dyn-item">
                 <div class="service_item-img_block">
                   <div class="service_item-img_wrap slide-up-1">
@@ -583,7 +562,7 @@
                   </div>
                 </div>
               </div>
-
+              
               <div role="listitem" class="service_cms-item w-dyn-item">
                 <div class="service_item-img_block">
                   <div class="service_item-img_wrap slide-up-1">
@@ -632,7 +611,7 @@
                   </div>
                 </div>
               </div>
-
+              
               <div role="listitem" class="service_cms-item w-dyn-item">
                 <div class="service_item-img_block">
                   <div class="service_item-img_wrap slide-up-1">
@@ -714,12 +693,10 @@
                     <div class="text-body">We start with a deep dive into your brand, goals, and vision to lay a strong foundation. Through strategic discussions and creative brainstorming, we uncover what makes your brand unique.</div>
                   </div>
                   <div class="how_grid-item slide-up-2">
-                    <div class="text-small-caps">step 2</div>
                     <div class="heading-3">Design</div>
                     <div class="text-body">Our team translates insights into innovative, high-end designs tailored to your brand's personality. From logo creation to packaging and web design, each detail is crafted to elevate your brand's visual identity.</div>
                   </div>
                   <div class="how_grid-item slide-up-3">
-                    <div class="text-small-caps">step 3</div>
                     <div class="heading-3">Delivery</div>
                     <div class="text-body">Once everything is perfected, we deliver your brand assets in a ready-to-use format, complete with guidelines for consistency. You'll receive everything you need to confidently launch your new look.</div>
                   </div>
@@ -730,31 +707,7 @@
         </section>
       </section>
       
-      <section id="about" class="full-page-section">
-        <div data-animation="over-right" data-collapse="small" data-duration="500" data-easing="ease-in-out" data-easing2="ease-in-out" role="banner" class="navbar w-nav">
-          <div class="padding-global">
-            <div class="container-xlarge w-container">
-              <div class="navbar_inner">
-                <nav role="navigation" class="navmenu w-nav-menu">
-                  <a href="#projects" class="text-small-caps is-nav-link w-nav-link">PORTFOLIO</a>
-                  <a href="#services" class="text-small-caps is-nav-link w-nav-link">services</a>
-                  <a href="#about" aria-current="page" class="text-small-caps is-nav-link w-nav-link w--current">About</a>
-                  <a href="#ai-content" class="text-small-caps is-nav-link w-nav-link">AI Content</a>
-                </nav>
-                <div data-mobile-menu="open" class="menu_button-inner">
-                  <div class="menu_button-line"></div>
-                  <div class="menu_button-line"></div>
-                  <div class="menu_button-line"></div>
-                </div>
-                <a href="#homepage" class="navbar_brand w-nav-brand">
-                  <img src="671fa81d5f5f17c9b7f3adb8_logo-black.svg" loading="lazy" alt="" class="intro_logo"/>
-                </a>
-                <a href="#contact" class="text-small-caps is-nav-link is-nav-cta">Contact</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        
+      <section id="about">
         <section class="section_about-hero is-about-page">
           <div class="padding-global padding-section-medium">
             <div class="w-layout-blockcontainer container-large w-container">
@@ -933,22 +886,26 @@
   <script src="lenis.min.js"></script>
   
   <script>
-    // Lottie Loader script from index.html (Assuming nowe_logo_animacja.json is also in the root)
+    // Lottie Loader script (Assuming nowe_logo_animacja.json and lottie.min.js are in the root)
     document.write('<script src="lottie.min.js"><\/script>');
     document.addEventListener('DOMContentLoaded', function() {
-      var animation = lottie.loadAnimation({
-          container: document.getElementById('loader'),
-          renderer: 'svg',
-          loop: true,
-          autoplay: true,
-          path: 'nowe_logo_animacja.json'
-      });
+      // Logic for lottie animation
+      if (document.getElementById('loader')) {
+        var animation = lottie.loadAnimation({
+            container: document.getElementById('loader'),
+            renderer: 'svg',
+            loop: true,
+            autoplay: true,
+            path: 'nowe_logo_animacja.json' 
+        });
+      }
     });
   </script>
 
   <script>
-    // Mobile menu functionality
+    // Mobile menu functionality (Consolidated)
     document.addEventListener('DOMContentLoaded', function() {
+      // 1. Mobile Menu Toggle
       document.querySelector('[data-mobile-menu="open"]').addEventListener('click', function(event) {
         event.preventDefault();
         document.querySelector('[data-mobile-menu-element]').classList.add('is-open');
@@ -960,8 +917,8 @@
         document.body.classList.remove('no-scroll');
       });
       
-      // Lenis smooth scrolling
-      if (!Webflow.env("editor")) {
+      // 2. Lenis smooth scrolling (Retained for smooth scroll, but without snap config)
+      if (typeof Lenis !== 'undefined' && !Webflow.env("editor")) {
         const lenis = new Lenis({
           lerp: 0.05,
           wheelMultiplier: 1,
@@ -974,36 +931,54 @@
         requestAnimationFrame(raf);
       }
       
-      // Content loaded animation
+      // 3. Content loaded animation
       window.addEventListener('load', function() {
         setTimeout(function() {
           document.body.classList.add('content-loaded');
         }, 1500);
       });
-      
-      // Navbar scrolling class for About page styling
-      const navbar = document.querySelector('.navbar');
-      const heroSection = document.querySelector('.section_about-hero');
 
+      // 4. Navbar scrolling class for About page styling
+      const navbar = document.querySelector('.navbar');
+      const heroSection = document.querySelector('.section_hero'); // Targeting the main hero
+      
       if (navbar) {
-          navbar.classList.add('is-about');
-          navbar.classList.add('is-fixed');
-          
-          if (heroSection) {
-            function setNavbarClass() {
+          function setNavbarClass() {
               if (window.scrollY > 50) {
+                // If scrolling down, remove 'is-about' style (typically transparent/white text)
                 navbar.classList.remove('is-about');
+                navbar.style.backgroundColor = ''; // Revert to default/CSS background
+              } else if (heroSection && heroSection.getBoundingClientRect().top <= 0) {
+                 // If scrolled past the main hero, but not far enough to trigger scroll > 50, maintain default style
+                 navbar.classList.remove('is-about');
               } else {
-                navbar.classList.add('is-about');
+                // At the very top (or in the top part of the main hero)
+                navbar.classList.add('is-about'); 
               }
-            }
-            
-            setNavbarClass();
-            window.addEventListener('scroll', function() {
-              setNavbarClass();
-            })
           }
+          
+          setNavbarClass();
+          window.addEventListener('scroll', setNavbarClass);
       }
+
+      // 5. FAQ Dropdown Toggle (Custom jQuery/JS to replace Webflow Interaction)
+      if (typeof $ !== 'undefined') {
+        $('.faq_item-question-wrap').off('click').on('click', function() {
+            var $parent = $(this).closest('.faq_item');
+            var $answer = $parent.find('.faq_item-answer-wrap');
+            
+            // Toggle active class and slide
+            $parent.toggleClass('active');
+            $answer.slideToggle(300);
+
+            // Optional: Close other open FAQs
+            $('.faq_item').not($parent).removeClass('active').find('.faq_item-answer-wrap').slideUp(300);
+        });
+
+        // Hide all answers initially on load
+        $('.faq_item-answer-wrap').hide();
+      }
+
     });
   </script>
 </body>
